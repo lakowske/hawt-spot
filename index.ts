@@ -69,13 +69,17 @@ function gitClone() {
 }
 
 async function deploy() : Promise<Boolean> {
-  
+  var path = '~/.hawt-spot';
+  var url = 'https://github.com/lakowske/hawt-spot';
+
   console.log(await remote('hostname'));
-  var p = myproject('~/.hawt-spot', 'https://github.com/lakowske/hawt-spot');
+  var p = myproject(path, url);
   console.log(await remote(p.rm));
   console.log(await remote(p.clone));
-  console.log(await remote('ls ~/.hawt-spot'));  
+  console.log(await remote(`ls ${path}`));  
   console.log(await remote('/sbin/iwconfig'));  
+  console.log(await remote('/sbin/ifconfig'));    
+  //console.log(await remote(`bash ${path}/scripts/install.sh`));
   
   return true;
 }
