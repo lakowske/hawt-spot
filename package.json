@@ -1,0 +1,24 @@
+{
+  "name": "hawt-spot",
+  "version": "1.0.0",
+  "description": "Configures WIFI radios for hot spot and other modes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakowske/hawt-spot.git"
+  },
+  "author": "Stateless systems",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lakowske/hawt-spot/issues"
+  },
+  "homepage": "https://github.com/lakowske/hawt-spot#readme",
+  "dependencies": {
+    "@types/node": "^14.11.1",
+    "typescript": "^4.0.3"
+  }
+}
