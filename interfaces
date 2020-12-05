@@ -1,0 +1,27 @@
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+
+# automatically connect the wired interface
+auto eth0
+allow-hotplug eth0
+iface eth0 inet manual
+
+# automatically connect the wireless interface, but disable it for now
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet manual
+wireless-power off
+
+# Configure the usb LTE modem
+auto usb0
+allow-hotplug usb0
+iface usb0 inet dhcp
+
+# create a bridge with both wired and wireless interfaces
+auto br0
+iface br0 inet static
+        address 192.168.66.1
+        netmask 255.255.255.0
+        bridge_ports eth0 wlan0
+        bridge_fd 0
+        bridge_stp off
